@@ -1,7 +1,32 @@
 <template>
-  <v-app class="grey lighten-3">
+  <v-app >
+    <v-container>
+      <br>
+      <br>
+      <br>
+      <v-layout
+            text-xs-center
+            wrap
+          >
+            <v-flex mb-4>
+              <h1 class="display-2 font-weight-bold mb-3">
+                Super Crowdfunding
+              </h1>
+              <p class="subheading font-weight-regular">
+                An DApp Utilize Ethereum for Decentralized Crowdfunding
+              </p>
+            </v-flex>
+          </v-layout>
+
+        <v-main>
+          <Top/>
+        </v-main>
+      </v-container>
+
+
     <v-content>
       <v-container>
+        
         <v-layout text-xs-center wrap>
           <v-flex mb-4>
             <h1 class="display-2 font-weight-bold mb-3">Crowdfunding</h1>
@@ -211,8 +236,12 @@
             </v-hover>
           </v-flex>
         </v-layout>
+        
       </v-container>
     </v-content>
+    <v-main>
+      <Footer/>
+    </v-main>
   </v-app>
 </template>
 
@@ -221,9 +250,16 @@
 import crowdfundInstance from "../contracts/crowdfundInstance";
 import crowdfundProject from "../contracts/crowdfundProjectInstance";
 import web3 from "../contracts/web3";
+import Footer from './components/footer';
+import Top from './components/top';
+
 
 export default {
   name: "App",
+  components: {
+    Footer,
+    Top,
+  },
   data() {
     return {
       startProjectDialog: false,
